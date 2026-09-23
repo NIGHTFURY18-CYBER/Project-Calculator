@@ -4,7 +4,7 @@ A working calculator built as part of [The Odin Project](https://www.theodinproj
 
 ## Live Demo
 
-[View it live](#) <!-- replace with your GitHub Pages link once enabled -->
+ https://nightfury18-cyber.github.io/Project-Calculator/
 
 ## Features
 
