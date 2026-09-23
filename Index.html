@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Nunito+Sans:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="calculator" id="calculator">
+
+    <div class="screen">
+      <div class="screen-history" id="history">&nbsp;</div>
+      <div class="screen-display" id="display">0</div>
+    </div>
+
+    <div class="keys">
+      <button class="key key--util" data-action="clear">AC</button>
+      <button class="key key--util" data-action="backspace">⌫</button>
+      <button class="key key--util" data-action="sign">±</button>
+      <button class="key key--op" data-action="divide">÷</button>
+
+      <button class="key key--num" data-num="7">7</button>
+      <button class="key key--num" data-num="8">8</button>
+      <button class="key key--num" data-num="9">9</button>
+      <button class="key key--op" data-action="multiply">×</button>
+
+      <button class="key key--num" data-num="4">4</button>
+      <button class="key key--num" data-num="5">5</button>
+      <button class="key key--num" data-num="6">6</button>
+      <button class="key key--op" data-action="subtract">−</button>
+
+      <button class="key key--num" data-num="1">1</button>
+      <button class="key key--num" data-num="2">2</button>
+      <button class="key key--num" data-num="3">3</button>
+      <button class="key key--op" data-action="add">+</button>
+
+      <button class="key key--num key--zero" data-num="0">0</button>
+      <button class="key key--num" data-action="decimal">.</button>
+      <button class="key key--eq" data-action="equals">=</button>
+    </div>
+
+  </main>
+
+  <script src="Script.js"></script>
+</body>
+</html>

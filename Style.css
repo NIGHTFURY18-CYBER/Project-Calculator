@@ -1,0 +1,174 @@
+:root {
+  --paper: #eae6de;
+  --housing: #8a6f52;
+  --housing-dark: #6b5640;
+  --housing-shadow: rgba(43, 34, 20, 0.35);
+
+  --screen-bg: #b9c9a9;
+  --screen-bg-dark: #a9bb97;
+  --screen-text: #2b2e22;
+
+  --key-num: #f2eee4;
+  --key-num-text: #2b2a28;
+  --key-num-shadow: #c9c2b2;
+
+  --key-op: #4c6b5d;
+  --key-op-text: #f2eee4;
+  --key-op-shadow: #33493f;
+
+  --key-eq: #b0492e;
+  --key-eq-text: #f6ece6;
+  --key-eq-shadow: #8a3824;
+
+  --key-util: #79523a;
+  --key-util-text: #f2eee4;
+  --key-util-shadow: #55392a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0,0,0,0.02) 0, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0,0,0,0.02) 0, transparent 40%);
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  padding: 24px;
+}
+
+.calculator {
+  width: 320px;
+  max-width: 100%;
+  background: var(--housing);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow:
+    0 20px 40px var(--housing-shadow),
+    inset 0 2px 0 rgba(255,255,255,0.15),
+    inset 0 -6px 0 var(--housing-dark);
+}
+
+.screen {
+  background: var(--screen-bg);
+  border-radius: 8px;
+  padding: 18px 16px 14px;
+  margin-bottom: 18px;
+  box-shadow:
+    inset 0 3px 8px rgba(0,0,0,0.25),
+    inset 0 -1px 0 var(--screen-bg-dark);
+  text-align: right;
+  overflow: hidden;
+}
+
+.screen-history {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--screen-text);
+  opacity: 0.55;
+  min-height: 1.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.screen-display {
+  font-family: 'Space Mono', monospace;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--screen-text);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: 10px;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key:active {
+  transform: translateY(2px);
+}
+
+.key--num {
+  background: var(--key-num);
+  color: var(--key-num-text);
+  box-shadow: inset 0 -3px 0 var(--key-num-shadow);
+}
+
+.key--num:active {
+  box-shadow: inset 0 -1px 0 var(--key-num-shadow);
+}
+
+.key--zero {
+  grid-column: span 2;
+}
+
+.key--op {
+  background: var(--key-op);
+  color: var(--key-op-text);
+  box-shadow: inset 0 -3px 0 var(--key-op-shadow);
+  font-size: 1.3rem;
+}
+
+.key--op:active {
+  box-shadow: inset 0 -1px 0 var(--key-op-shadow);
+}
+
+.key--eq {
+  background: var(--key-eq);
+  color: var(--key-eq-text);
+  box-shadow: inset 0 -3px 0 var(--key-eq-shadow);
+  grid-column: span 2;
+  font-size: 1.3rem;
+}
+
+.key--eq:active {
+  box-shadow: inset 0 -1px 0 var(--key-eq-shadow);
+}
+
+.key--util {
+  background: var(--key-util);
+  color: var(--key-util-text);
+  box-shadow: inset 0 -3px 0 var(--key-util-shadow);
+  font-size: 1rem;
+}
+
+.key--util:active {
+  box-shadow: inset 0 -1px 0 var(--key-util-shadow);
+}
+
+.key:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 360px) {
+  .calculator {
+    width: 100%;
+  }
+  .screen-display {
+    font-size: 2rem;
+  }
+}
